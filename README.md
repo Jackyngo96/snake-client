@@ -8,8 +8,8 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["What does the snake say?"](/Snake%20photo.PNG)
+!["Snake say what???"](/Snake%20photo2.PNG)
 
 
 ## Getting Started
