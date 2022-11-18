@@ -1,5 +1,5 @@
 let connection;
-
+const { INPUTS } = require("./constants");
 const setupInput = function (conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -8,41 +8,27 @@ const setupInput = function (conn) {
   stdin.resume();
   stdin.on("data", handleUserInput);
 };
-  
+let moving;
 
-
-  const handleUserInput = function (key) {
-  // move up if w is pressed
-  if (key === "w") {
-    // setInterval(() => {
-    connection.write("Move: up");
-    // }, 1000);
-    // console.log("Move: up");
+const handleUserInput = function (key) {
+  let WASD = ["w", "a", "s", "d"];
+  for (const moves of WASD) {
+    if (key === moves) { 
+      if (moving) {
+        clearInterval(moving);
+      }
+      moving = setInterval(() => {
+        connection.write(INPUTS[moves]);
+      }, 50);
     }
-  if (key === "a") {
-    //setInterval(() => {
-    connection.write("Move: left");
-    // }, 1000);
-    // console.log("Move: left");
-  } 
-  if (key === "s") {
-    //setInterval(() => {
-    connection.write("Move: down");
-    //}, 1000);
-    // console.log("Move: down");
-  } 
-  if (key === "d") {
-    //setInterval(() => {
-    connection.write("Move: right");
-    // }, 1000);
-    // console.log("Move: right");
   }
-  if (key === "/") { 
-    connection.write("Say: HELLO")
+  for (const message in INPUTS) {
+    if (key === message) {
+      connection.write(INPUTS[message]);
+    }
   }
-  // exit program if Ctrl C is pressed
   if (key === "\u0003") {
-      process.exit();
+    process.exit();
   }
 };
 
