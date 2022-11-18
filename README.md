@@ -8,11 +8,20 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["What does the snake say?"](/Snake%20photo.PNG)
-!["Snake say what???"](/Snake%20photo2.PNG)
+!["Snake say what???"](![image](https://user-images.githubusercontent.com/103899466/202766994-c6f86e89-798d-4579-86a9-47e82d5b454a.png)
+)
 
 
 ## Getting Started
 
 - Follow steps inside the snek server repo to run the server side
-- Run the development snake client using the `node play.js` command.
+- Run the development snake client using the `node play.js` command. 
+
+## Objective
+- Move the snake towards the dot on the screen to lengthen your snake 
+- Avoid crashing into the walls to survive 
+
+## Controls
+- Use the WASD keys to move up, down, left, right.
+- Press the `/`,`+`,`-` keys to print out special messages from the snake
+- Use `CTRL` + `C` to quit the game
